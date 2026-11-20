@@ -56,4 +56,20 @@ python tests/test_local.py
 
 ## Results
 
-Filled in after the run on a real Snowflake account. Each run writes its pass or fail table, the answers and the rejects list to `results/`.
+Run on 20 Nov 2026 on a **Snowflake trial account, not the emulator**: setup, then September, then October, then September again. The full table is in [docs/run-2026-11-20.md](docs/run-2026-11-20.md).
+
+| # | Criterion | Result |
+|---|---|---|
+| 1 | Row counts match the files | PASS |
+| 2a | Fee and hour totals match the files | PASS |
+| 2b | Nothing vanishes | PASS |
+| 3 | Each question has a saved view with an answer | PASS |
+| 4 | Rule breakers go to the rejects list | PASS |
+| 5 | Re-run: new month updates answers, repeat month adds nothing | PASS |
+| 6 | Director reads answers only | PASS |
+| 7 | Smallest warehouse, credits reported | PASS |
+| 8 | Answers match an independent recalculation | PASS |
+
+Credits used: 0.081802496 credits (Snowflake metering, read at 18:11 on 20 Nov 2026).
+
+Nothing failed. Loading September a second time added 0 rows.

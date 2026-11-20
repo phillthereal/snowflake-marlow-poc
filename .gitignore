@@ -1,0 +1,9 @@
+results/
+.local_db/
+__pycache__/
+*.p8
+*.pub
+connections.toml
+.env
+STUDY_NOTES.md
+.venv/

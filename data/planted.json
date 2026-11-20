@@ -1,0 +1,79 @@
+{
+  "note": "Synthetic data. Patterns planted on purpose so the build can be tested.",
+  "job_types": {
+    "Market assessment": {
+      "win_rate": 0.42,
+      "overrun_factor": 0.96
+    },
+    "Commercial due diligence": {
+      "win_rate": 0.66,
+      "overrun_factor": 1.34
+    },
+    "Operating model review": {
+      "win_rate": 0.36,
+      "overrun_factor": 1.04
+    },
+    "Cost reduction review": {
+      "win_rate": 0.32,
+      "overrun_factor": 1.12
+    },
+    "Procurement support": {
+      "win_rate": 0.56,
+      "overrun_factor": 0.92
+    },
+    "Data and reporting audit": {
+      "win_rate": 0.62,
+      "overrun_factor": 1.29
+    }
+  },
+  "expected_winning_on_price": [
+    "Commercial due diligence",
+    "Data and reporting audit"
+  ],
+  "mess": {
+    "batch_2026_09": {
+      "bids_job_type_missing": [
+        "B-0239",
+        "B-0117",
+        "B-0258"
+      ],
+      "bids_job_type_unrecognised": [
+        "B-0049",
+        "B-0299"
+      ],
+      "bids_no_outcome": [
+        "B-0110",
+        "B-0199",
+        "B-0306"
+      ],
+      "bids_pound_formatted": 15,
+      "bids_duplicated": [
+        "B-0228"
+      ],
+      "jobs_duplicated": [
+        "J-0101"
+      ],
+      "jobs_bid_not_found": [
+        "J-0999"
+      ],
+      "timesheets": {
+        "no_job_code": 24,
+        "job_code_mistyped": 3,
+        "negative_hours": 4,
+        "hours_not_a_number": 2,
+        "duplicated_lines": 6,
+        "orphan_job_lines": 3
+      }
+    },
+    "batch_2026_10": {
+      "bids_new": 9,
+      "bids_decided_in_october": 7,
+      "jobs_new": 3,
+      "jobs_completed_in_october": 4,
+      "timesheets": {
+        "no_job_code": 2,
+        "duplicated_lines": 1
+      }
+    }
+  }
+}

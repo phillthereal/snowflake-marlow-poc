@@ -1,0 +1,327 @@
+bid_id,client_code,job_type,submitted_on,fee_quoted_gbp,priced_hours,outcome,lead_partner
+B-0001,C-109,Procurement support,17/01/2024,16850,158,Lost,P2
+B-0002,C-077,Commercial due diligence,10/01/2024,30200,231,Lost,P1
+B-0003,C-094,Operating model review,02/01/2024,25850,209,Lost,P3
+B-0004,C-108,Market assessment,25/01/2024,13050,110,Won,P3
+B-0005,C-028,Operating model review,13/01/2024,52400,477,Won,P2
+B-0006,C-005,Operating Model Review,10/01/2024,36100,322,Won,P3
+B-0007,C-009,Data and reporting audit,27/01/2024,12550,129,Won,P3
+B-0008,C-119,procurement,25/01/2024,19200,158,Won,P1
+B-0009,C-090,Operating model review,06/01/2024,22900,178,Lost,P3
+B-0010,C-046,Cost Reduction Review,02/01/2024,28800,239,Lost,P2
+B-0011,C-129,Data and reporting audit,02/02/2024,20900,192,Lost,P4
+B-0012,C-060,Commercial DD,08/02/2024,39800,376,Won,P4
+B-0013,C-070,Data and reporting audit,16/02/2024,8600,81,Lost,P3
+B-0014,C-072,Data and reporting audit,16/02/2024,9250,83,Won,P2
+B-0015,C-118,Procurement support,04/02/2024,18400,187,Lost,P3
+B-0016,C-010,Cost reduction review,15/02/2024,42400,343,Lost,P2
+B-0017,C-083,Market assessment,13/02/2024,13250,111,won,P1
+B-0018,C-115,Market assessment,12/02/2024,8050,69,Lost,P3
+B-0019,C-041,Procurement support,16/02/2024,20600,157,Won,P3
+B-0020,C-010,Procurement support,13/03/2024,20950,183,Won,P3
+B-0021,C-010,Operating model review,22/03/2024,34950,289,Lost,P3
+B-0022,C-100,Operating model review,17/03/2024,47100,375,Won,P2
+B-0023,C-109,Cost Reduction Review,11/03/2024,34200,277,Lost,P2
+B-0024,C-081,Procurement Support,25/03/2024,15400,139,Lost,P2
+B-0025,C-011,Data and reporting audit,17/03/2024,20250,152,Won ,P2
+B-0026,C-043,Cost reduction review,10/03/2024,16850,168,Lost,P1
+B-0027,C-097,Data & reporting audit,26/03/2024,20800,199,Lost,P1
+B-0028,C-003,Market assessment,19/03/2024,5500,53,Lost,P1
+B-0029,C-120,Data and reporting audit,01/03/2024,10550,87,Lost,P2
+B-0030,C-005,Cost reduction review,26/03/2024,18400,150,Won,P2
+B-0031,C-134,Market assessment,19/04/2024,15300,122,Lost,P1
+B-0032,C-066,Market assessment,28/04/2024,13400,101,Lost,P1
+B-0033,C-061,Commercial due diligence,26/04/2024,40100,387,Won,P1
+B-0034,C-109,Commercial due diligence,11/04/2024,18400,144,Won,P2
+B-0035,C-043,Commercial due diligence,12/04/2024,20350,188,Lost,P4
+B-0036,C-068,Data and reporting audit,09/04/2024,24550,196,Won,P2
+B-0037,C-140,CDD,04/04/2024,23250,183,Won,P3
+B-0038,C-097,Operating model review,16/04/2024,40050,301,Won,P2
+B-0039,C-075,Procurement support,23/04/2024,26300,234,Won,P3
+B-0040,C-025,Operating model review,08/04/2024,35450,322,Won,P3
+B-0041,C-105,Data and reporting audit,24/05/2024,15750,122,Won,P3
+B-0042,C-065,Operating Model Review,2024-05-21,24000,201,Won,P1
+B-0043,C-137,Operating Model Review,02/05/2024,38050,290,Lost,P1
+B-0044,C-017,Procurement support,06/05/2024,17300,177,Lost,P2
+B-0045,C-013,Commercial due diligence,12/05/2024,18800,152,Lost,P1
+B-0046,C-095,procurement,21/05/2024,21850,194,Won,P2
+B-0047,C-032,Commercial due diligence,05/05/2024,37150,302,Lost,P2
+B-0048,C-109,Procurement support,24/06/2024,19550,193,Won,P3
+B-0049,C-081,Workshop facilitation,23/06/2024,24150,194,Lost,P4
+B-0050,C-118,Procurement support,10/06/2024,7850,67,Won,P4
+B-0051,C-054,Operating model review,20/06/2024,33850,327,Lost,P4
+B-0052,C-128,Procurement support,21/06/2024,7150,60,Won,P1
+B-0053,C-082,Cost reduction review,03/06/2024,28400,283,Lost,P4
+B-0054,C-038,Data and reporting audit,19/06/2024,8350,80,Lost,P3
+B-0055,C-109,Market assessment,17/06/2024,18100,135,Lost,P2
+B-0056,C-080,Commercial due diligence,19/06/2024,16400,150,Won,P4
+B-0057,C-124,Data and reporting audit,23/06/2024,7600,65,Won,P1
+B-0058,C-087,Data and reporting audit,19/06/2024,7700,65,Won,P3
+B-0059,C-082,Commercial due diligence,18/06/2024,48850,372,Won,P2
+B-0060,C-115,Commercial due diligence,04/07/2024,18450,150,Lost,P4
+B-0061,C-064,Cost reduction review,02/07/2024,36350,309,Lost,P4
+B-0062,C-021,Data and reporting audit,2024-07-14,8150,85,Won,P1
+B-0063,C-098,Market assessment,22/07/2024,7550,65,WON,P4
+B-0064,C-067,Market assessment,10/07/2024,10500,103,Lost,P3
+B-0065,C-024,Commercial due diligence,16/07/2024,28450,241,Won,P4
+B-0066,C-069,Data and reporting audit,05/07/2024,23000,176,Lost,P1
+B-0067,C-121,Procurement support,04/08/2024,24400,192,Won,P2
+B-0068,C-025,Operating model review,17/08/2024,24350,215,Lost,P3
+B-0069,C-110,Cost Reduction Review,09/08/2024,26100,259,Lost,P1
+B-0070,C-101,Cost reduction review,01/08/2024,26800,231,Lost,P2
+B-0071,C-052,Market assessment,19/08/2024,6550,54,Lost,P2
+B-0072,C-074,Data and reporting audit,26/08/2024,22700,170,WON,P3
+B-0073,C-003,Commercial due diligence,18/08/2024,52900,400,Lost,P4
+B-0074,C-077,market assessment ,03/08/2024,9400,91,Won,P4
+B-0075,C-108,Cost Reduction Review,23/08/2024,"£12,650",130,Won,P2
+B-0076,C-140,Commercial DD,01/09/2024,39450,318,Lost,P2
+B-0077,C-012,Commercial DD,11/09/2024,20350,151,Won,P4
+B-0078,C-127,Procurement support,16/09/2024,16450,124,Won,P2
+B-0079,C-068,Commercial due diligence,09/09/2024,30900,242,Lost,P4
+B-0080,C-002,Market Assessment,21/09/2024,4850,41,Lost,P1
+B-0081,C-012,Procurement support,10/09/2024,15100,115,Won,P1
+B-0082,C-088,Procurement support,06/09/2024,16000,161,Lost,P1
+B-0083,C-058,Commercial due diligence,2024-09-17,24800,216,Won ,P1
+B-0084,C-112,Market Assessment,20/09/2024,"£9,600",93,Lost,P2
+B-0085,C-115,procurement,09/10/2024,21200,171,Lost,P3
+B-0086,C-109,Commercial DD,2024-10-09,38750,372,Lost,P1
+B-0087,C-101,Operating model review,06/10/2024,23750,242,Won,P3
+B-0088,C-118,Data and reporting audit,17/10/2024,18300,157,Won,P3
+B-0089,C-006,procurement,26/10/2024,8300,69,Lost,P1
+B-0090,C-124,procurement,18/10/2024,16150,161,Lost,P2
+B-0091,C-055,Data and reporting audit,27/10/2024,11850,101,Lost,P3
+B-0092,C-082,Market assessment,25/10/2024,8150,82,Lost,P2
+B-0093,C-044,Cost reduction review,26/11/2024,26050,242,Lost,P2
+B-0094,C-071,Op model review,08/11/2024,16700,151,Lost,P3
+B-0095,C-124,Market assessment,09/11/2024,6050,47,Won,P1
+B-0096,C-012,Operating model review,20/11/2024,31800,256,Lost,P4
+B-0097,C-003,Market assessment,26/11/2024,13550,107,Lost,P4
+B-0098,C-029,Cost reduction review,09/11/2024,38950,293,Won,P4
+B-0099,C-021,Cost Reduction Review,13/11/2024,32400,260,Lost,P2
+B-0100,C-043,Reporting audit,18/11/2024,14200,112,Lost,P4
+B-0101,C-027,Cost reduction review,21/11/2024,28800,214,Lost,P2
+B-0102,C-135,Cost reduction review,21/11/2024,19250,147,Lost,P3
+B-0103,C-101,Commercial due diligence,06/11/2024,35700,281,Won,P4
+B-0104,C-114,Data and reporting audit,27/11/2024,9500,90,Lost,P3
+B-0105,C-070,Procurement support,02/12/2024,15300,121,Lost,P1
+B-0106,C-012,Procurement support,06/12/2024,20350,161,Won,P1
+B-0107,C-054,Procurement support,13/12/2024,28750,227,Won,P1
+B-0108,C-116,Market assessment,03/12/2024,9100,68,Lost,P2
+B-0109,C-084,market assessment ,23/12/2024,15050,150,Lost,P3
+B-0110,C-088,Data and reporting audit,22/12/2024,15250,128,,P2
+B-0111,C-135,Operating model review,03/12/2024,35350,318,Won,P4
+B-0112,C-102,Cost reduction review,26/12/2024,11300,114,Lost,P2
+B-0113,C-093,Market assessment,17/12/2024,11900,112,Won,P1
+B-0114,C-076,Procurement support,14/12/2024,8900,71,Lost,P2
+B-0115,C-102,Commercial due diligence,11/12/2024,15700,145,Lost,P4
+B-0116,C-101,Commercial due diligence,06/12/2024,15700,164,Won,P1
+B-0117,C-131,,03/01/2025,16450,156,Lost,P4
+B-0118,C-131,Procurement support,14/01/2025,23300,211,Won,P4
+B-0119,C-005,Market assessment,06/01/2025,18500,145,Lost,P1
+B-0120,C-059,Commercial due diligence,01/01/2025,35300,287,Won,P2
+B-0121,C-098,Operating model review,01/01/2025,56900,446,Won,P4
+B-0122,C-116,Operating model review,18/01/2025,42150,349,Lost,P2
+B-0123,C-090,Cost reduction review,09/01/2025,25000,261,Lost,P4
+B-0124,C-134,Data and reporting audit,07/02/2025,7150,60,Won,P4
+B-0125,C-108,CDD,18/02/2025,41600,398,Lost,P1
+B-0126,C-077,Commercial due diligence,05/02/2025,25050,188,Lost,P3
+B-0127,C-049,Market assessment,23/02/2025,7700,77,Won,P4
+B-0128,C-118,Procurement Support,09/02/2025,22150,198,Lost,P4
+B-0129,C-053,Commercial due diligence,23/02/2025,26750,244,Won,P1
+B-0130,C-079,Data and reporting audit,25/02/2025,11100,110,Lost,P3
+B-0131,C-078,Operating Model Review,12/02/2025,18850,194,Lost,P3
+B-0132,C-063,Market assessment,07/02/2025,17000,129,Lost,P2
+B-0133,C-126,Commercial due diligence,22/02/2025,23650,229,Won,P1
+B-0134,C-132,procurement,19/02/2025,"£9,150",70,Won,P1
+B-0135,C-021,Commercial due diligence,23/02/2025,23800,211,Lost,P4
+B-0136,C-135,Cost reduction review,02/03/2025,18450,144,Lost,P3
+B-0137,C-065,Operating model review,04/03/2025,48800,409,Lost,P1
+B-0138,C-011,Market Assessment,25/03/2025,17300,159,Lost,P4
+B-0139,C-112,Cost Reduction Review,2025-03-08,22600,189,Won,P1
+B-0140,C-024,Procurement support,19/03/2025,25950,223,Lost,P3
+B-0141,C-041,Data and reporting audit,05/03/2025,17400,178,Won,P2
+B-0142,C-072,Commercial due diligence,15/03/2025,33250,269,Won,P2
+B-0143,C-135,Cost reduction,18/03/2025,29500,251,Lost,P4
+B-0144,C-063,Operating Model Review,03/03/2025,45850,373,Won,P1
+B-0145,C-025,Procurement support,2025-03-01,15500,142,Won,P4
+B-0146,C-127,Commercial due diligence,25/03/2025,14750,136,Won,P2
+B-0147,C-114,Cost reduction review,19/03/2025,45500,340,Lost,P4
+B-0148,C-101,Market Assessment,06/04/2025,10300,105,Lost,P4
+B-0149,C-062,Market assessment,14/04/2025,9550,98,Won,P2
+B-0150,C-109,Commercial due diligence,16/04/2025,19650,203,Lost,P2
+B-0151,C-123,Procurement Support,03/04/2025,10300,90,Won,P3
+B-0152,C-026,Commercial due diligence,03/04/2025,44350,339,Lost,P2
+B-0153,C-136,Data and reporting audit,01/04/2025,"£7,700",62,Won,P2
+B-0154,C-115,Market assessment,16/04/2025,5250,40,Lost,P4
+B-0155,C-089,Cost reduction review,10/04/2025,23950,252,Won,P3
+B-0156,C-123,Market assessment,05/05/2025,17150,134,Lost,P2
+B-0157,C-020,Operating model review,02/05/2025,51900,424,Lost,P4
+B-0158,C-123,Commercial due diligence,15/05/2025,28900,228,Won,P3
+B-0159,C-048,Cost Reduction Review,13/05/2025,33800,321,Lost,P4
+B-0160,C-033,Market assessment,26/05/2025,11750,119,Lost,P3
+B-0161,C-008,Cost reduction review,2025-05-26,32450,256,Lost,P3
+B-0162,C-094,Data and reporting audit,01/05/2025,12150,106,WON,P1
+B-0163,C-023,Market assessment,28/05/2025,"£15,400",154,Lost,P4
+B-0164,C-032,Market assessment,05/05/2025,18400,156,Won,P2
+B-0165,C-074,Procurement support,22/06/2025,15550,144,Won,P3
+B-0166,C-029,Operating model review,16/06/2025,15550,162,Lost,P2
+B-0167,C-061,Procurement support,10/06/2025,18350,169,Won,P4
+B-0168,C-095,Cost reduction,22/06/2025,16150,159,Lost,P2
+B-0169,C-008,Data and reporting audit,08/06/2025,9000,72,Won,P3
+B-0170,C-090,Cost reduction review,07/06/2025,12450,113,Lost,P1
+B-0171,C-133,Market assessment,03/06/2025,18700,141,Lost ,P3
+B-0172,C-033,Cost reduction,05/06/2025,36000,301,Lost,P3
+B-0173,C-039,Cost reduction review,01/06/2025,28850,272,Won,P4
+B-0174,C-040,Cost reduction review,17/06/2025,27550,248,Lost,P2
+B-0175,C-096,Data and reporting audit,12/07/2025,17050,139,Won,P1
+B-0176,C-039,Operating Model Review,09/07/2025,23100,191,Won,P2
+B-0177,C-026,Cost reduction review,23/07/2025,19200,164,Lost,P2
+B-0178,C-017,Reporting audit,13/07/2025,11600,93,Won,P2
+B-0179,C-109,market assessment ,28/07/2025,9350,87,Won,P3
+B-0180,C-115,Market assessment,13/07/2025,20000,156,Lost,P4
+B-0181,C-135,Commercial due diligence,24/07/2025,42450,375,Won,P1
+B-0182,C-081,Cost reduction review,25/07/2025,14600,109,Lost,P1
+B-0183,C-010,Commercial DD,26/07/2025,31850,269,Won,P2
+B-0184,C-039,Data & reporting audit,08/07/2025,"£21,650",161,Won,P2
+B-0185,C-043,Cost reduction review,12/07/2025,33200,308,Lost,P2
+B-0186,C-127,Operating Model Review,18/07/2025,21800,169,Won,P4
+B-0187,C-004,Data and reporting audit,2025-08-20,20450,175,Lost,P2
+B-0188,C-063,Data and reporting audit,02/08/2025,15500,127,Won,P4
+B-0189,C-022,Cost Reduction Review,09/08/2025,28900,251,Lost,P2
+B-0190,C-134,Data and reporting audit,19/08/2025,13000,130,Lost,P3
+B-0191,C-128,Commercial due diligence,11/08/2025,17450,161,LOST,P2
+B-0192,C-102,Commercial due diligence,24/08/2025,30600,262,Won,P2
+B-0193,C-123,market assessment ,07/08/2025,6900,55,Lost,P3
+B-0194,C-108,Market assessment,2025-08-14,18550,158,lost,P2
+B-0195,C-097,Data and reporting audit,27/08/2025,17800,152,Lost,P4
+B-0196,C-047,Cost reduction,01/08/2025,13200,108,Won,P1
+B-0197,C-078,Market Assessment,06/08/2025,10950,82,Lost,P1
+B-0198,C-089,Cost reduction review,2025-08-19,21150,215,Lost,P4
+B-0199,C-032,Commercial due diligence,14/09/2025,24750,248,,P1
+B-0200,C-134,Procurement support,02/09/2025,17550,162,won,P3
+B-0201,C-004,Cost reduction review,24/09/2025,15550,122,Lost,P1
+B-0202,C-029,Operating model review,06/09/2025,62050,494,Lost,P2
+B-0203,C-089,Data and reporting audit,03/09/2025,19050,190,Won,P4
+B-0204,C-066,Data and reporting audit,03/09/2025,19700,149,WON,P4
+B-0205,C-055,Commercial due diligence,24/09/2025,25000,261,Won,P3
+B-0206,C-026,Commercial due diligence,03/09/2025,17050,150,Lost,P2
+B-0207,C-108,Cost reduction review,26/09/2025,22650,212,Lost,P2
+B-0208,C-096,Commercial due diligence,2025-10-23,14250,146,Lost,P4
+B-0209,C-033,Operating model review,18/10/2025,31500,329,Lost,P1
+B-0210,C-113,Data and reporting audit,15/10/2025,26450,200,Won,P1
+B-0211,C-006,Operating Model Review,05/10/2025,35800,292,Won,P3
+B-0212,C-135,Market Assessment,24/10/2025,5650,42,Lost,P4
+B-0213,C-048,Procurement support,02/10/2025,"£19,200",154,Won,P2
+B-0214,C-010,Commercial due diligence,19/10/2025,18500,189,Lost,P2
+B-0215,C-092,Market assessment,24/10/2025,7150,54,Lost,P3
+B-0216,C-029,Commercial due diligence,09/10/2025,28800,219,Won,P4
+B-0217,C-032,Data and reporting audit,04/10/2025,15050,115,Lost,P4
+B-0218,C-138,Procurement support,07/10/2025,21500,166,Lost,P1
+B-0219,C-084,Data and reporting audit,28/11/2025,13300,119,Lost,P1
+B-0220,C-059,Cost Reduction Review,2025-11-18,32950,270,Lost,P1
+B-0221,C-028,CDD,13/11/2025,39450,363,Won,P2
+B-0222,C-059,Operating model review,06/11/2025,27500,204,Lost,P3
+B-0223,C-104,Data and reporting audit,25/11/2025,8300,82,Won,P3
+B-0224,C-096,Commercial due diligence,04/11/2025,37250,311,LOST,P1
+B-0225,C-080,Procurement support,21/11/2025,10900,86,Won,P1
+B-0226,C-021,Reporting audit,06/11/2025,19700,189,Won,P2
+B-0227,C-039,Data & reporting audit,20/11/2025,18500,181,Won,P2
+B-0228,C-125,Operating model review,06/11/2025,31750,258,Won,P3
+B-0228,C-125,Operating model review,06/11/2025,31750,258,Won,P3
+B-0229,C-043,procurement,2025-11-01,20500,195,Won,P4
+B-0230,C-116,Data and reporting audit,20/11/2025,17750,185,Lost,P2
+B-0231,C-041,Data and reporting audit,23/12/2025,5300,51,Won,P4
+B-0232,C-112,Cost reduction,16/12/2025,"£16,500",136,Won,P4
+B-0233,C-120,Reporting audit,11/12/2025,11600,121,Won,P2
+B-0234,C-049,Cost reduction review,17/12/2025,12300,122,Lost,P4
+B-0235,C-080,Commercial due diligence,26/12/2025,37750,368,Lost,P2
+B-0236,C-073,Operating model review,09/12/2025,35800,350,Lost,P1
+B-0237,C-005,Operating model review,24/12/2025,27800,220,Lost,P3
+B-0238,C-069,Op model review,14/12/2025,46300,367,Won,P4
+B-0239,C-096,,28/01/2026,11300,93,Lost,P4
+B-0240,C-132,Cost reduction review,20/01/2026,32900,284,Lost,P2
+B-0241,C-034,Market Assessment,22/01/2026,4200,41,Lost,P3
+B-0242,C-125,Data and reporting audit,05/01/2026,15250,138,Lost,P3
+B-0243,C-035,Cost reduction review,13/01/2026,22800,177,Lost,P4
+B-0244,C-126,Procurement support,20/01/2026,11300,86,Won,P4
+B-0245,C-079,Commercial due diligence,03/01/2026,24900,255,Lost,P1
+B-0246,C-040,Market assessment,03/01/2026,10300,99,Won,P2
+B-0247,C-081,Commercial due diligence,03/01/2026,"£27,900",253,Won,P4
+B-0248,C-003,Operating model review,20/01/2026,19400,170,Won,P3
+B-0249,C-021,Reporting audit,26/01/2026,9100,72,Won,P3
+B-0250,C-058,Commercial DD,25/01/2026,22700,221,Won,P4
+B-0251,C-129,Cost reduction,20/02/2026,33100,271,Won,P4
+B-0252,C-014,Market assessment,17/02/2026,14800,112,Lost,P1
+B-0253,C-120,Cost reduction review,07/02/2026,18250,180,Lost,P3
+B-0254,C-002,Commercial due diligence,18/02/2026,42000,333,Won,P1
+B-0255,C-105,CDD,09/02/2026,25850,210,Won,P1
+B-0256,C-035,Market assessment,27/02/2026,20650,154,Won,P2
+B-0257,C-137,Op model review,15/02/2026,"£43,250",436,Lost,P1
+B-0258,C-018,,17/02/2026,58350,485,Lost,P2
+B-0259,C-071,Data and reporting audit,2026-02-17,7700,75,Won,P3
+B-0260,C-120,Market assessment,02/02/2026,13150,117,Lost,P2
+B-0261,C-063,Commercial DD,20/03/2026,31250,300,Won,P2
+B-0262,C-067,Operating model review,04/03/2026,43400,382,Lost,P1
+B-0263,C-120,Commercial DD,27/03/2026,21600,187,Won,P3
+B-0264,C-110,Cost Reduction Review,05/03/2026,30850,283,Won,P4
+B-0265,C-126,Cost reduction,26/03/2026,13650,122,Lost,P1
+B-0266,C-100,Operating model review,18/03/2026,34400,275,Won,P4
+B-0267,C-100,Commercial due diligence,24/03/2026,"£21,600",166,Won,P4
+B-0268,C-027,Data and reporting audit,05/03/2026,20200,159,Lost,P4
+B-0269,C-022,Data & reporting audit,06/03/2026,11150,84,Lost,P3
+B-0270,C-006,Op model review,21/03/2026,42750,432,Lost,P1
+B-0271,C-070,Op model review,15/03/2026,27750,245,Lost,P2
+B-0272,C-103,procurement,13/04/2026,21100,209,Won,P2
+B-0273,C-128,Operating model review,25/04/2026,"£29,100",282,Lost,P2
+B-0274,C-051,Operating model review,26/04/2026,26850,221,Lost,P4
+B-0275,C-033,Data and reporting audit,16/04/2026,13250,98,Lost,P1
+B-0276,C-005,Data & reporting audit,22/04/2026,11050,84,Won,P3
+B-0277,C-137,Market assessment,16/04/2026,"£7,850",73,Lost,P3
+B-0278,C-073,Commercial due diligence,09/04/2026,47700,358,Won,P2
+B-0279,C-040,Commercial DD,02/04/2026,23350,222,Won,P3
+B-0280,C-063,Market assessment,18/04/2026,16350,147,Lost,P1
+B-0281,C-134,Commercial due diligence,13/05/2026,"£34,450",265,Won,P2
+B-0282,C-088,Operating model review,23/05/2026,25250,237,Lost,P1
+B-0283,C-137,Procurement support,22/05/2026,15450,131,Lost,P2
+B-0284,C-080,Operating model review,12/05/2026,25750,216,Won,P1
+B-0285,C-113,Operating Model Review,19/05/2026,46400,434,Lost,P3
+B-0286,C-005,Cost reduction,14/05/2026,17450,145,Lost,P4
+B-0287,C-083,Data and reporting audit,05/05/2026,11100,94,Won,P1
+B-0288,C-055,Commercial DD,22/05/2026,25300,250,Won,P3
+B-0289,C-029,Cost reduction review,04/05/2026,39600,337,Won,P3
+B-0290,C-108,Procurement support,15/06/2026,7650,64,Lost,P3
+B-0291,C-035,Market assessment,26/06/2026,4700,46,Lost,P4
+B-0292,C-003,Market assessment,01/06/2026,12300,117,Won,P4
+B-0293,C-112,Market assessment,04/06/2026,5500,47,Won,P3
+B-0294,C-017,Market Assessment,13/06/2026,8050,60,Lost,P4
+B-0295,C-026,Market assessment,14/06/2026,12800,134,Won,P3
+B-0296,C-008,Market Assessment,08/06/2026,10750,111,Lost,P1
+B-0297,C-015,Op model review,04/06/2026,22850,201,Won,P3
+B-0298,C-011,Data and reporting audit,18/06/2026,11550,92,Won,P1
+B-0299,C-021,Workshop facilitation,16/06/2026,40050,322,Lost,P2
+B-0300,C-031,Reporting audit,2026-06-04,13450,105,Lost,P3
+B-0301,C-124,Market Assessment,04/06/2026,15450,128,Won,P3
+B-0302,C-046,Procurement Support,02/07/2026,8300,82,Lost,P3
+B-0303,C-080,Market assessment,05/07/2026,9750,86,Won,P3
+B-0304,C-115,Commercial due diligence,08/07/2026,27400,209,Won,P3
+B-0305,C-031,Procurement support,2026-07-25,27350,249,Won,P4
+B-0306,C-129,Commercial due diligence,22/07/2026,30150,285,,P4
+B-0307,C-121,Operating model review,16/07/2026,28000,230,Won,P4
+B-0308,C-034,Procurement support,19/07/2026,11050,86,Won,P1
+B-0309,C-072,market assessment ,18/08/2026,10450,79,Won,P4
+B-0310,C-119,Market assessment,28/08/2026,7900,70,Pending,P2
+B-0311,C-100,Operating model review,21/08/2026,41150,350,Lost,P3
+B-0312,C-087,Commercial due diligence,04/08/2026,26700,216,Won,P3
+B-0313,C-033,Procurement support,14/08/2026,8700,80,Won,P3
+B-0314,C-070,Procurement Support,11/08/2026,"£24,050",183,Won,P1
+B-0315,C-078,market assessment ,15/08/2026,8100,74,Lost,P1
+B-0316,C-042,Procurement support,24/08/2026,20550,153,Lost,P2
+B-0317,C-091,Procurement support,02/08/2026,9300,86,Won,P1
+B-0318,C-050,CDD,2026-08-01,15300,132,Won,P2
+B-0319,C-087,Operating model review,17/09/2026,38500,292,Pending,P2
+B-0320,C-025,Market assessment,25/09/2026,13000,136,Pending,P1
+B-0321,C-003,Data & reporting audit,16/09/2026,24800,185,Pending,P2
+B-0322,C-010,Market assessment,04/09/2026,14350,117,Pending,P2
+B-0323,C-056,Operating Model Review,02/09/2026,33050,347,Pending,P4
+B-0324,C-128,Data and reporting audit,01/09/2026,22500,185,Pending,P4
+B-0325,C-042,procurement,03/09/2026,28800,232,Lost,P4

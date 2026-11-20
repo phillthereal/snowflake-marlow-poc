@@ -1,0 +1,17 @@
+bid_id,client_code,job_type,submitted_on,fee_quoted_gbp,priced_hours,outcome,lead_partner
+B-0310,C-119,Market assessment,28/08/2026,7900,70,Lost,P2
+B-0319,C-087,Operating model review,17/09/2026,38500,292,Lost,P2
+B-0320,C-025,Market assessment,25/09/2026,13000,136,Won,P1
+B-0321,C-003,Data & reporting audit,16/09/2026,24800,185,Lost,P2
+B-0322,C-010,Market assessment,04/09/2026,14350,117,Lost,P2
+B-0323,C-056,Operating Model Review,02/09/2026,33050,347,Lost,P4
+B-0324,C-128,Data and reporting audit,01/09/2026,22500,185,Won,P4
+B-0326,C-087,Cost reduction review,14/10/2026,22450,199,Pending,P3
+B-0327,C-100,Procurement support,10/10/2026,8150,84,Won,P3
+B-0328,C-118,Commercial DD,03/10/2026,38800,293,Pending,P3
+B-0329,C-075,Cost reduction,26/10/2026,24100,192,Pending,P1
+B-0330,C-007,Data and reporting audit,04/10/2026,6700,58,Pending,P1
+B-0331,C-018,Data and reporting audit,18/10/2026,5000,50,Pending,P1
+B-0332,C-093,market assessment ,25/10/2026,5950,59,Pending,P3
+B-0333,C-069,Data and reporting audit,20/10/2026,22000,173,Pending,P1
+B-0334,C-016,Reporting audit,26/10/2026,15700,146,Pending,P4

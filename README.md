@@ -1,6 +1,6 @@
 # Marlow Advisory: pricing proof of concept on Snowflake
 
-A small pre-sales proof of concept. A fictional consulting firm keeps its bids, job register and timesheets in three spreadsheets and can't see which kinds of work run over the hours they were priced at. This build loads the monthly exports into Snowflake, checks every row against named rules, and answers three questions the operations director asked for, scored against [success criteria written before the build](SUCCESS_CRITERIA.md).
+A small pre-sales proof of concept. A fictional consulting firm keeps its bids, job register and timesheets in three spreadsheets and can't see which kinds of work run over the hours they were priced at. This build loads the monthly exports into Snowflake, checks every row against named rules, and answers three questions the operations director asked for, scored against [success criteria first drafted before any code](SUCCESS_CRITERIA.md).
 
 **All data is synthetic.** Marlow Advisory does not exist. `generator/generate_data.py` writes the files from a fixed seed, with patterns and errors planted on purpose (listed in `data/planted.json`) so the build can be tested against a known answer. The results show the pipeline works. They say nothing about any real firm.
 
@@ -58,6 +58,8 @@ python tests/test_local.py
 
 Run on 20 Nov 2026 on a **Snowflake trial account, not the emulator**: setup, then September, then October, then September again. The full table is in [docs/run-2026-11-20.md](docs/run-2026-11-20.md).
 
+The code has changed since that run. The changes are listed in [CHANGELOG.md](CHANGELOG.md) and have passed the local emulator test only. They have not yet been run on Snowflake.
+
 | # | Criterion | Result |
 |---|---|---|
 | 1 | Row counts match the files | PASS |
@@ -70,6 +72,6 @@ Run on 20 Nov 2026 on a **Snowflake trial account, not the emulator**: setup, th
 | 7 | Smallest warehouse, credits reported | PASS |
 | 8 | Answers match an independent recalculation | PASS |
 
-Credits used: 0.081802496 credits (Snowflake metering, read at 18:11 on 20 Nov 2026).
+Credits used: 0.081802496 credits (Snowflake metering, read at 18:11 on 20 Nov 2026, 13 minutes after the last load). Snowflake's metering can lag by up to 6 hours, so this reading may be low. It will be read again.
 
 Nothing failed. Loading September a second time added 0 rows.

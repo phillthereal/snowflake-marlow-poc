@@ -16,6 +16,7 @@ No password or key ever lives in this folder. See RUN_GUIDE.md.
 import argparse
 import csv
 import os
+import re
 import sys
 from datetime import datetime
 from pathlib import Path
@@ -171,6 +172,10 @@ def answers(cur):
 def cmd_load(cur, local, batch_dir):
     batch_dir = Path(batch_dir).resolve()
     batch = batch_dir.name
+    # The folder name goes into SQL text (the stage path and the load_batch
+    # column), so only the expected pattern is allowed through.
+    if not re.fullmatch(r"batch_\d{4}_\d{2}", batch):
+        sys.exit(f"Batch folder must be named like batch_2026_09, not '{batch}'")
     use_pipeline_role(cur, local)
     before = {t: scalar(cur, f"SELECT COUNT(*) FROM RAW.{t}") for t in FILES.values()}
     try:
@@ -313,7 +318,8 @@ def cmd_check(cur, local, load_note=None):
         ok = str(wh.get("size", "")).upper() in ("X-SMALL", "XSMALL") and int(wh.get("auto_suspend") or 0) <= 60
         results.append(("7 Smallest warehouse, credits reported", ok,
                         f"size {wh.get('size')}, auto-suspend {wh.get('auto_suspend')}s; "
-                        "credits: run `python run.py usage` (metering can lag up to 3 hours)"))
+                        "credits: run `python run.py usage` (metering can lag up to 3 hours, "
+                        "cloud services up to 6)"))
 
     # 8. Every answer matches the independent recalculation.
     ok, ev = compare(independent_check.compute(batch_dirs), q1, q2, q3, q3b, dq)
@@ -337,6 +343,9 @@ def cmd_check(cur, local, load_note=None):
 
     stamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     tag = (load_note or {}).get("batch", "check")
+    if local:
+        # Emulator files are named differently so they are never mistaken for Snowflake results.
+        tag = f"local_{tag}"
     for name, data in (("q1", q1), ("q2", q2), ("q3", q3), ("q3b", q3b), ("data_quality", dq)):
         save(f"{stamp}_{tag}_{name}", data)
     save(f"{stamp}_{tag}_rejects", rows(cur, "SELECT source_table, load_batch, source_file, spreadsheet_row, "
@@ -387,7 +396,8 @@ def compare(exp, q1, q2, q3, q3b, dq):
     for r in q3:
         e = e3.loc[r["job_type"]]
         check(f"Q3 {r['job_type']} decided", r["decided_bids"], e["decided_bids"])
-        check(f"Q3 {r['job_type']} win rate", r["win_rate_pct"], e["win_rate_pct"], 0.05)
+        if r["decided_bids"] > 0:
+            check(f"Q3 {r['job_type']} win rate", r["win_rate_pct"], e["win_rate_pct"], 0.05)
         if r["verdict"] != e["verdict"]:
             problems.append(f"Q3 {r['job_type']} verdict: Snowflake '{r['verdict']}', recalculation '{e['verdict']}'")
 
@@ -426,7 +436,8 @@ def cmd_usage(cur, local):
         FROM SNOWFLAKE.ACCOUNT_USAGE.WAREHOUSE_METERING_HISTORY
         WHERE warehouse_name = 'MARLOW_WH'
         GROUP BY warehouse_name""")
-    show("Credits used by MARLOW_WH (Snowflake metering, can lag up to 3 hours)", data)
+    show("Credits used by MARLOW_WH to date (Snowflake metering: compute can lag up to 3 hours, "
+         "cloud services up to 6)", data)
     save(f"{datetime.now().strftime('%Y%m%d_%H%M%S')}_usage", data)
 
 

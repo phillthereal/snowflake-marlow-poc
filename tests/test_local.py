@@ -45,13 +45,29 @@ def main():
         failures += [f"{step}: {k}" for k in bad]
 
     # The two planted "winning on price" types must be the ones flagged.
-    latest_q3 = sorted((ROOT / "results").glob("*_q3.csv"))[-1]
+    latest_q3 = sorted((ROOT / "results").glob("*_local_*_q3.csv"))[-1]
     with latest_q3.open(encoding="utf-8") as f:
         flagged = sorted(r["job_type"] for r in csv.DictReader(f) if r["verdict"].startswith("Winning on price"))
     planted = sorted(json.loads((ROOT / "data" / "planted.json").read_text())["expected_winning_on_price"])
     print(f"Flagged as winning on price: {flagged} (planted: {planted})")
     if flagged != planted:
         failures.append("Q3 did not find the planted pattern")
+
+    # Every rejected bid and job must point at the spreadsheet row that really
+    # holds it: line N of the CSV, counting the header as line 1.
+    latest_rejects = sorted((ROOT / "results").glob("*_local_*_rejects.csv"))[-1]
+    wrong_rows = 0
+    with latest_rejects.open(encoding="utf-8") as f:
+        for r in csv.DictReader(f):
+            if r["source_table"] == "timesheets":
+                continue  # timesheet lines have no unique ID to look up
+            with (ROOT / "data" / r["load_batch"] / f"{r['source_table']}.csv").open(encoding="utf-8", newline="") as src:
+                lines = list(csv.reader(src))
+            if lines[int(r["spreadsheet_row"]) - 1][0] != r["record_id"]:
+                wrong_rows += 1
+    print(f"Rejected bids and jobs pointing at the wrong spreadsheet row: {wrong_rows}")
+    if wrong_rows:
+        failures.append("rejects list points at the wrong spreadsheet row")
 
     if failures:
         raise SystemExit("FAILED: " + "; ".join(failures))

@@ -87,7 +87,7 @@ WITH wins AS (
   GROUP BY job_type
 ),
 firm AS (
-  SELECT SUM(won_bids) / SUM(decided_bids) AS firm_win_rate FROM wins
+  SELECT SUM(won_bids) / NULLIF(SUM(decided_bids), 0) AS firm_win_rate FROM wins
 ),
 overrun AS (
   SELECT job_type, MEDIAN(overrun_pct) AS median_overrun, COUNT(*) AS completed_jobs
@@ -98,16 +98,23 @@ SELECT
   w.job_type,
   w.decided_bids,
   w.won_bids,
-  ROUND(w.won_bids / w.decided_bids * 100, 1)  AS win_rate_pct,
+  -- NULLIF turns "0 decided bids" into NULL, so the division returns NULL.
+  -- Without it, Snowflake stops the whole view with a "Division by zero" error.
+  ROUND(w.won_bids / NULLIF(w.decided_bids, 0) * 100, 1)  AS win_rate_pct,
   ROUND(f.firm_win_rate * 100, 1)              AS firm_win_rate_pct,
   o.completed_jobs,
   ROUND(o.median_overrun * 100, 1)             AS median_overrun_pct,
   CASE
-    WHEN w.won_bids / w.decided_bids > f.firm_win_rate AND o.median_overrun >= 0.10
+    -- Say so when there is nothing to judge, instead of guessing a verdict.
+    WHEN w.decided_bids = 0
+      THEN 'No decided bids yet'
+    WHEN o.median_overrun IS NULL
+      THEN 'No completed jobs yet'
+    WHEN w.won_bids / NULLIF(w.decided_bids, 0) > f.firm_win_rate AND o.median_overrun >= 0.10
       THEN 'Winning on price: wins often and overruns'
     WHEN o.median_overrun >= 0.10
       THEN 'Overruns and wins less often'
-    WHEN w.won_bids / w.decided_bids > f.firm_win_rate
+    WHEN w.won_bids / NULLIF(w.decided_bids, 0) > f.firm_win_rate
       THEN 'Wins often and delivers within price'
     ELSE 'Wins less often, delivers within price'
   END                                          AS verdict

@@ -1,6 +1,6 @@
 # Working rules for this repo
 
-A pre-sales proof of concept on Snowflake for a fictional consulting firm, Marlow Advisory. Fil presents it in interviews for solutions and sales engineer roles, so he has to be able to explain every line. Keep it small.
+A pre-sales proof of concept on Snowflake for a fictional consulting firm, Marlow Advisory. Fil is the author and has to be able to explain every line without notes. Keep it small and plain.
 
 ## Never
 

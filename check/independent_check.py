@@ -230,16 +230,22 @@ def compute(batch_dirs):
 
     # ---- Q3
     decided = clean_b[clean_b["outcome_c"].isin(["Won", "Lost"])]
-    wins = decided.groupby("job_type_c").agg(
-        decided_bids=("key", "count"),
+    # Every job type with a clean bid gets a row, even if none are decided yet.
+    wins = clean_b.groupby("job_type_c").agg(
+        decided_bids=("outcome_c", lambda s: int(s.isin(["Won", "Lost"]).sum())),
         won_bids=("outcome_c", lambda s: int((s == "Won").sum())))
     firm = wins["won_bids"].sum() / wins["decided_bids"].sum()
-    wins["win_rate_pct"] = wins["won_bids"] / wins["decided_bids"] * 100
+    # No decided bids means no win rate (blank), not a division by zero.
+    wins["win_rate_pct"] = wins["won_bids"] / wins["decided_bids"].where(wins["decided_bids"] > 0) * 100
     wins["firm_win_rate_pct"] = firm * 100
     med = jr.groupby("job_type_c")["overrun"].median()
     wins["median_overrun_pct"] = med * 100
 
     def verdict(r):
+        if r.decided_bids == 0:
+            return "No decided bids yet"
+        if pd.isna(r.median_overrun_pct):
+            return "No completed jobs yet"
         over = r.median_overrun_pct >= 10
         wins_often = r.win_rate_pct > r.firm_win_rate_pct
         if wins_often and over:

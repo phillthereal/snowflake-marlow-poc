@@ -1,35 +1,26 @@
-# Run guide (for Fil)
+# Run guide
 
-The trial lasts 30 days from sign-up, so everything in part 1 happens before you sign up.
+How to run the proof of concept: first on a local emulator, then on a Snowflake trial account. A trial lasts 30 days from sign-up, so do part 1 before you sign up.
 
-## Timing
+## Part 1: rehearse locally (no account needed)
 
-| When | What | Clock running? |
-|---|---|---|
-| Today or tomorrow | Part 1: install, rehearse locally, read the SQL | No |
-| Saturday 21 or Sunday 22 Nov, when you have 2 clear hours | Part 2 and 3: sign up, connect, run both months | Yes, day 1 |
-| The morning after | `python run.py usage` for the credit figure (Snowflake's metering lags up to 3 hours) | Day 2 |
-| By Tuesday 24 Nov | Record the 3-minute walkthrough | Day 3 or 4 |
-| Wednesday 25 or Thursday 26 Nov | Apply to the Associate Solution Engineer role with the recording and repo link, leaving a buffer before 30 Nov | |
-| Around 21 Dec | Trial ends. Everything rebuilds on a fresh account with the same commands if an interviewer wants it live | |
+From this folder, in a terminal:
 
-## Part 1: before the trial
+```
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements-local.txt
+python tests/test_local.py
+```
 
-1. Copy this folder to your Mac.
-2. In a terminal, from the folder:
-   ```
-   python3 -m venv .venv
-   source .venv/bin/activate
-   pip install -r requirements-local.txt
-   python tests/test_local.py
-   ```
-   It should end with "All testable criteria pass on the emulator". If it doesn't, paste the output in the thread.
-3. Read the SQL in this order and say each part out loud: `sql/02_objects.sql`, `sql/04_copy.sql`, the BIDS section of `sql/05_clean.sql` (the other two sections follow the same pattern), then `sql/06_answers.sql`, then `sql/07_access.sql`. Mark any line you can't explain and ask about it in the thread. The questions an interviewer is most likely to ask are at the bottom.
+It should end with "All testable criteria pass on the emulator". The emulator can't test roles or credits, so criteria 6 and 7 show as SKIP.
+
+Emulator result files have `local` in their names. They are never Snowflake results.
 
 ## Part 2: sign up and connect
 
 1. Sign up at signup.snowflake.com. Choose **Enterprise** edition, **AWS**, region **Europe (London)**. Don't add a card. AI features stay off without one, and this build doesn't use them.
-2. Make a key pair in your terminal. The private key never leaves your Mac:
+2. Make a key pair in your terminal. The private key never leaves your machine:
    ```
    mkdir -p ~/.snowflake && cd ~/.snowflake
    openssl genrsa 2048 | openssl pkcs8 -topk8 -inform PEM -out marlow_key.p8 -nocrypt
@@ -37,6 +28,7 @@ The trial lasts 30 days from sign-up, so everything in part 1 happens before you
    chmod 600 marlow_key.p8
    grep -v "PUBLIC KEY" marlow_key.pub | tr -d '\n'; echo
    ```
+   The key has no passphrase and is protected by file permissions only. That is a fair trade for a trial account holding synthetic data. With real data, give the key a passphrase or keep it in a secrets manager.
 3. In Snowsight, open a new SQL worksheet and run this, pasting the long line the last command printed and using your Snowflake username:
    ```
    ALTER USER YOUR_USERNAME SET RSA_PUBLIC_KEY = 'MIIBIjANBgkq...';
@@ -51,43 +43,33 @@ The trial lasts 30 days from sign-up, so everything in part 1 happens before you
    private_key_file = "/Users/YOUR_MAC_NAME/.snowflake/marlow_key.p8"
    role = "ACCOUNTADMIN"
    ```
+   `ACCOUNTADMIN` is needed for the first setup only, because the pipeline's own role doesn't exist yet. Step 2 of part 3 changes it.
 6. Back in the project folder, install the real connector: `pip install -r requirements.txt`.
 
-Never paste the key file or the toml file into the thread.
+Never share or commit the key file or the toml file. `.gitignore` already excludes both.
 
 ## Part 3: run it
 
-```
-python run.py setup
-python run.py load data/batch_2026_09
-python run.py load data/batch_2026_10
-python run.py load data/batch_2026_09
-```
+1. Create the roles, warehouse and database:
+   ```
+   python run.py setup
+   ```
+2. Open `~/.snowflake/connections.toml` and change the last line to `role = "MARLOW_ADMIN"`. From now on a new session starts with the pipeline's role, not as account admin. `sql/01_setup.sql` switches to `ACCOUNTADMIN` by itself if setup is ever run again.
+3. Load the two months, then September a second time:
+   ```
+   python run.py load data/batch_2026_09
+   python run.py load data/batch_2026_10
+   python run.py load data/batch_2026_09
+   ```
 
 Each load prints the answers and a pass or fail line per criterion, and saves everything in `results/`. The last command loads September a second time on purpose: criterion 5 passes only if nothing is added.
 
-If anything fails, paste the terminal output (not the keys) in the thread and stop there.
+If a command fails, stop there and read the error before running the next one. Each command is safe to run again.
 
-The next morning: `python run.py usage`.
+For the credit figure, run `python run.py usage` at least 6 hours after the last load. Snowflake's metering lags by up to 3 hours for compute and up to 6 for cloud services. The figure is the warehouse's total to date, so it grows with every later query.
 
-Then open `sql/demo_new_bid.sql` in a Snowsight worksheet and run it. It runs as the director's role, which is what the recording shows.
+To see the answers as the director would, open `sql/demo_new_bid.sql` in a Snowsight worksheet and run it. It runs under the director's role.
 
-## Part 4: the 3-minute recording
+## After the trial
 
-| Time | What's on screen | What you say |
-|---|---|---|
-| 0:00 to 0:20 | SUCCESS_CRITERIA.md | The buyer, the problem, and that the criteria were written before the build. Say the data is synthetic |
-| 0:20 to 1:00 | Terminal: `python run.py load data/batch_2026_10` | One command per month. Point at the rejects: the unmapped job type, the negative hours. Nothing vanishes |
-| 1:00 to 2:00 | Q3 output, then `demo_new_bid.sql` in Snowsight | Two job types win often and overrun: they're winning on price. Then price a new bid the way the director would |
-| 2:00 to 2:40 | The criteria table in `results/` | Pass or fail on each line, including any fail. The director's role is refused the raw timesheets. What it cost in credits |
-| 2:40 to 3:00 | README | What production would need, in one sentence |
-
-## Questions to be ready for
-
-1. Why load every column as text first?
-2. What happens if someone loads the same file twice?
-3. How can the director read a view built on tables they have no access to?
-4. Why the median overrun and not the average?
-5. Why 10% as the overrun line, and who decided it?
-6. How would this run every month without you starting it?
-7. What did it cost, and what would it cost at ten times the data?
+The trial account closes 30 days after sign-up. Everything rebuilds on a fresh account with the same commands.

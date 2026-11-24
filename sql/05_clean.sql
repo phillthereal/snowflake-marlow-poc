@@ -224,8 +224,11 @@ WHERE reject_reason IS NULL AND NOT is_superseded;
 
 -- ============================ REJECTS LIST ============================
 -- One list for all three files. spreadsheet_row is the row number you would
--- see in Excel, with the header as row 1. Snowflake can count rows from the
--- header or from the first data row depending on settings; the IFF lines it up.
+-- see in Excel, where the header is row 1 and the first data row is row 2.
+-- source_row comes from Snowflake's own row counter. Rather than assume
+-- whether that counter includes the header, first_rows finds the lowest
+-- source_row loaded from each file. That row is spreadsheet row 2, and every
+-- other row is counted from it.
 
 CREATE OR REPLACE TABLE CLEAN.REJECTS AS
 WITH all_rejects AS (
@@ -257,11 +260,20 @@ WITH all_rejects AS (
            WHEN 'Week ending unreadable' THEN week_ending
          END
   FROM CLEAN.TIMESHEETS_CHECKED WHERE reject_reason IS NOT NULL
+),
+first_rows AS (
+  SELECT source_file, MIN(source_row) AS first_row FROM RAW.BIDS GROUP BY source_file
+  UNION ALL
+  SELECT source_file, MIN(source_row) FROM RAW.JOBS GROUP BY source_file
+  UNION ALL
+  SELECT source_file, MIN(source_row) FROM RAW.TIMESHEETS GROUP BY source_file
 )
 SELECT
   a.*,
-  source_row + IFF(MIN(source_row) OVER (PARTITION BY source_file) = 1, 1, 0) AS spreadsheet_row
-FROM all_rejects a;
+  a.source_row - f.first_row + 2 AS spreadsheet_row
+FROM all_rejects a
+JOIN first_rows f
+  ON f.source_file = a.source_file;
 
 -- ============================ JOB RESULTS ============================
 -- One row per completed job: what it was priced at and what it took.

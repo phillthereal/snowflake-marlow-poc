@@ -1,6 +1,6 @@
 # Success criteria: Marlow Advisory proof of concept
 
-Written before the build. Version 2, 20 Nov 2026.
+Version 1, with seven criteria, was written on 19 Nov 2026 before any code. Version 2, on 20 Nov 2026, was finalised alongside the build. It put the questions in order of value to the buyer, merged win rate with overrun into question 3, tightened criteria 2, 4 and 5, and added criterion 8 (the independent recalculation).
 
 ## The buyer and the problem
 
@@ -15,6 +15,8 @@ The firm prices fixed-fee work from memory and old spreadsheets. Bids, the job r
 3. **Which job types do we win because we underprice them?** This puts win rate next to overrun. A job type that wins more often than the firm average and also overruns by 10% or more is likely winning on price. Win rate by job type and fee band is kept as a supporting table.
 
 ## Pass or fail
+
+The Result column was filled in after the run on a Snowflake trial account on 20 Nov 2026. Changes made to the code since that run are listed in [CHANGELOG.md](CHANGELOG.md).
 
 | # | Criterion | How it is tested | Result |
 |---|---|---|---|
@@ -32,6 +34,7 @@ The firm prices fixed-fee work from memory and old spreadsheets. Bids, the job r
 - Overrun is judged on completed jobs only.
 - A job type "overruns" when its median job is 10% or more over its priced hours.
 - Win rate counts Won and Lost bids only. Pending bids and bids with no outcome recorded are left out.
+- A job type with no decided bids, or with no completed jobs, is reported as exactly that. It gets no verdict in question 3 until there is something to judge.
 - When the same bid or job appears in two monthly files, the later file wins.
 - Negative timesheet hours are treated as errors and rejected. If they are really corrections, the rule changes to net them off. This is the first question for discovery.
 - "Workshop facilitation" appears in the bid register but is not one of the agreed job types, so those bids are rejected until the buyer says where they belong.
@@ -39,7 +42,3 @@ The firm prices fixed-fee work from memory and old spreadsheets. Bids, the job r
 ## Out of scope
 
 AI features, dashboards and live connections to other systems.
-
-## One rule outside the sheet
-
-Every query has to be explainable line by line before the recording.

@@ -35,4 +35,6 @@ GRANT USAGE ON WAREHOUSE MARLOW_WH TO ROLE MARLOW_DIRECTOR;
 GRANT CREATE DATABASE ON ACCOUNT TO ROLE MARLOW_ADMIN;
 
 -- Criterion 7 reads credit usage from Snowflake's own metering views.
-GRANT IMPORTED PRIVILEGES ON DATABASE SNOWFLAKE TO ROLE MARLOW_ADMIN;
+-- USAGE_VIEWER covers the usage and cost views only. It does not open query
+-- history, login history or the user list, which IMPORTED PRIVILEGES would.
+GRANT DATABASE ROLE SNOWFLAKE.USAGE_VIEWER TO ROLE MARLOW_ADMIN;

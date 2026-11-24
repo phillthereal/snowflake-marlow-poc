@@ -16,7 +16,7 @@ The firm prices fixed-fee work from memory and old spreadsheets. Bids, the job r
 
 ## Pass or fail
 
-The Result column was filled in after the run on a Snowflake trial account on 20 Nov 2026. Changes made to the code since that run are listed in [CHANGELOG.md](CHANGELOG.md).
+The Result column was filled in after the run on a Snowflake trial account on 24 Nov 2026, copied from the final load. The full record is in [docs/run-2026-11-24.md](docs/run-2026-11-24.md). The earlier run is in [docs/run-2026-11-20.md](docs/run-2026-11-20.md).
 
 | # | Criterion | How it is tested | Result |
 |---|---|---|---|
@@ -26,7 +26,7 @@ The Result column was filled in after the run on a Snowflake trial account on 20
 | 4 | Rows that break a rule (missing job type, negative hours, unknown job code, duplicates and the rest) land in a rejects list with the file, the spreadsheet row and the reason. None vanish | Blank job types and negative hours in the files are counted and matched against the rejects list | PASS: blank job type: 3 in files, 3 rejected; negative hours: 4 in files, 4 rejected; rejects without file, row or reason: 0 |
 | 5 | Next month's files load with the same command and the answers update with no manual edits. Loading the same month twice changes nothing | Load October, then load September again | PASS: batch_2026_09 (repeat load, nothing added): rows added {'BIDS': 0, 'JOBS': 0, 'TIMESHEETS': 0}; completed jobs 148 before, 148 after |
 | 6 | The director's role reads the answers and a data quality summary, and is refused the raw and clean tables, including individual timesheet lines | `run.py` switches to the director role and tries both | PASS: answers readable (6 rows); MARLOW.CLEAN.TIMESHEETS refused; MARLOW.RAW.TIMESHEETS refused; MARLOW.CLEAN.REJECTS refused |
-| 7 | Runs on the smallest warehouse (X-Small, suspends after 60 seconds idle), and the credits used are read from Snowflake's own metering and reported | `SHOW WAREHOUSES`, then `run.py usage` | PASS: size X-Small, auto-suspend 60s; credits: run `python run.py usage` (metering can lag up to 3 hours) **Credits used: 0.081802496 credits (compute 0.076500000, cloud services 0.005302496), from `python run.py usage` at 18:11 on 20 Nov 2026.** |
+| 7 | Runs on the smallest warehouse (X-Small, suspends after 60 seconds idle), and the credits used are read from Snowflake's own metering and reported | `SHOW WAREHOUSES`, then `run.py usage` | PASS: size X-Small, auto-suspend 60s; credits: run `python run.py usage` (metering can lag up to 3 hours, cloud services up to 6). **Credits: to be read with `python run.py usage` at least 6 hours after the run, because Snowflake's metering lags.** |
 | 8 | Every answer matches an independent recalculation done outside Snowflake from the same files | `check/independent_check.py` recomputes with pandas and `run.py` compares | PASS: Q1, Q2 (21 rows), Q3, Q3b and the rejects summary all match the pandas recalculation from the CSV files |
 
 ## Assumptions to confirm with the buyer

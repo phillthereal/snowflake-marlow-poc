@@ -10,5 +10,6 @@
 | 2026-11-22 | run.py | `load` refuses a batch folder not named like `batch_2026_09` | The folder name is put into SQL text |
 | 2026-11-22 | run.py, tests/test_local.py | Emulator result files have `local` in their names. The usage output says the figure is to date and how far metering can lag | Emulator and Snowflake files were named the same way |
 | 2026-11-22 | RUN_GUIDE.md, SUCCESS_CRITERIA.md, README.md, CLAUDE.md | Run guide cut down to the steps needed to run the build, and now switches the connection to `MARLOW_ADMIN` after setup. Criteria sheet states its version history and when results were added | Keep the public docs to what a reader needs, and state history accurately |
+| 2026-11-24 | README.md, SUCCESS_CRITERIA.md, docs/run-2026-11-24.md | Recorded the 24 Nov run on a Snowflake trial account, after the database was dropped and rebuilt | All 8 criteria passed on every load. This is the first Snowflake run of the 22 Nov changes. The credit figure is left out until metering catches up |
 
-The 22 Nov changes have passed the local emulator test (`python tests/test_local.py`). They have not yet been run on a Snowflake account.
+The 22 Nov changes passed the local emulator test (`python tests/test_local.py`) and then ran on a Snowflake trial account on 24 Nov 2026.

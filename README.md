@@ -56,9 +56,7 @@ python tests/test_local.py
 
 ## Results
 
-Run on 20 Nov 2026 on a **Snowflake trial account, not the emulator**: setup, then September, then October, then September again. The full table is in [docs/run-2026-11-20.md](docs/run-2026-11-20.md).
-
-The code has changed since that run. The changes are listed in [CHANGELOG.md](CHANGELOG.md) and have passed the local emulator test only. They have not yet been run on Snowflake.
+Run on 24 Nov 2026 on a **Snowflake trial account, not the emulator**: the database was dropped, then setup, then September, then October, then September again. The full table is in [docs/run-2026-11-24.md](docs/run-2026-11-24.md). The earlier run, on 20 Nov 2026, is in [docs/run-2026-11-20.md](docs/run-2026-11-20.md).
 
 | # | Criterion | Result |
 |---|---|---|
@@ -72,6 +70,6 @@ The code has changed since that run. The changes are listed in [CHANGELOG.md](CH
 | 7 | Smallest warehouse, credits reported | PASS |
 | 8 | Answers match an independent recalculation | PASS |
 
-Credits used: 0.081802496 credits (Snowflake metering, read at 18:11 on 20 Nov 2026, 13 minutes after the last load). Snowflake's metering can lag by up to 6 hours, so this reading may be low. It will be read again.
+Credits: to be read with `python run.py usage` at least 6 hours after the run, because Snowflake's metering lags.
 
 Nothing failed. Loading September a second time added 0 rows.
